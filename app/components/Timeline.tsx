@@ -188,7 +188,6 @@ export default function Timeline({ cameras, incidents, currentTime, onScrub }: T
   height={EVENT_HEIGHT}
 >
   <div
-    xmlns="http://www.w3.org/1999/xhtml"
     style={{
       backgroundColor: COLORS[inc.type] || "#6B7280",
       color: "#fff",
