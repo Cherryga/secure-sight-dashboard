@@ -30,7 +30,7 @@ function Annotation({
 
 // Device box that floats and rotates
 function RotatingBox() {
-  const mesh = useRef<any>();
+  const mesh = useRef<any>(null);
   useFrame((state) => {
     mesh.current.rotation.y += 0.005;
     mesh.current.position.y = Math.sin(state.clock.elapsedTime) * 0.2;
@@ -38,7 +38,7 @@ function RotatingBox() {
   return (
     <mesh ref={mesh} castShadow receiveShadow>
       <boxGeometry args={[1.5, 0.8, 1]} />
-      <meshStandardMaterial color="#white" metalness={0.5} roughness={0.5} />
+      <meshStandardMaterial color="#balck" metalness={0.5} roughness={0.5} />
     </mesh>
   );
 }
@@ -140,7 +140,7 @@ function DeviceScene() {
     <group>
       <RotatingBox />
       {annotations.map((a, i) => (
-        <Annotation key={i} position={a.pos}>
+        <Annotation key={i} position={a.pos as [number, number, number]}>
           {a.label}
         </Annotation>
       ))}
