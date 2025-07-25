@@ -2,13 +2,13 @@
   "name": "secure-sight-dashboard",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-     "prisma:generate": "prisma generate"
-  },
+"scripts": {
+  "dev": "next dev",
+  "prisma:generate": "prisma generate",
+  "build": "prisma generate && next build",
+  "start": "next start",
+  "lint": "next lint"
+},
   "type": "module",
   "prisma": {
     "seed": "tsx prisma/seed.ts"
